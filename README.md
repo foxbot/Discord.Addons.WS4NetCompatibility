@@ -1,0 +1,1 @@
+Discord.Addons.WS4NetCompatibility
