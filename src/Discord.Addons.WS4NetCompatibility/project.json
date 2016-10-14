@@ -1,5 +1,15 @@
 ﻿{
-  "version": "1.0.0-*",
+  "version": "1.0.0-beta1-*",
+  "title": "Discord.Addons.WS4NetProvider",
+  "description": "An addon to Discord.Net that provides compatibility with a managed WebSocket implementation. Primarily targeting Windows 7.",
+  "packOptions": {
+    "owners": [ "foxbot" ],
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/420foxbot/Discord.Addons.WS4NetCompatibility"
+    },
+    "tags": [ "discord" ]
+  },
 
   "dependencies": {
     "Discord.Net.Core": "1.0.0-beta2-*",

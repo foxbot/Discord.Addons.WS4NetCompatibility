@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Discord.Addons.WS4NetCompatibility", "src\Discord.Addons.WS4NetCompatibility\Discord.Addons.WS4NetCompatibility.xproj", "{2A2FCF47-2E02-4DD4-AFD5-B38907494921}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ExampleProject", "src\ExampleProject\ExampleProject.xproj", "{E658091D-615A-428A-A68F-7192E49DD924}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,11 +24,16 @@ Global
 		{2A2FCF47-2E02-4DD4-AFD5-B38907494921}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A2FCF47-2E02-4DD4-AFD5-B38907494921}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A2FCF47-2E02-4DD4-AFD5-B38907494921}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E658091D-615A-428A-A68F-7192E49DD924}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E658091D-615A-428A-A68F-7192E49DD924}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E658091D-615A-428A-A68F-7192E49DD924}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E658091D-615A-428A-A68F-7192E49DD924}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2A2FCF47-2E02-4DD4-AFD5-B38907494921} = {58ADD775-C089-4AC2-97AB-C1CE75FE5847}
+		{E658091D-615A-428A-A68F-7192E49DD924} = {58ADD775-C089-4AC2-97AB-C1CE75FE5847}
 	EndGlobalSection
 EndGlobal
