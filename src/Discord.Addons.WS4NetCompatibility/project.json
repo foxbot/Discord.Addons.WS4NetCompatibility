@@ -1,0 +1,13 @@
+﻿{
+  "version": "1.0.0-*",
+
+  "dependencies": {
+    "Discord.Net.Core": "1.0.0-beta2-*",
+    "WebSocket4Net": "0.15.0-beta6"
+  },
+
+  "frameworks": {
+    "netstandard1.3": {
+    }
+  }
+}
