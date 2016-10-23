@@ -1,26 +1,25 @@
 language: csharp
-solution: Discord.Addons.WS4NetCompatibility.sln 
-
-secure: "acvu67AEgbeQWvQT5385XLrLF1aD6eY3tE04SzVfrkfrJMlswLkD5Txvpvu6uPrqDD76UeYUA8vMPxLfJv36aNbOmdPFQaufVbXBtjwWjcHzyKi/NNS9MoPJSO7aVUc8v/XhSegJsLkVynqXiL3fRAPtmeemxu0wNlpzjVx2T3PLSLJU+Pdp4A6YwKZ4v+NVZ8XbcObcbz80g+itW+hyydZQZTofqAiZXEsnG0eebAHA8vh6ASZjVYaYispwEHQpwqh0ZjL0b66xERg5x0rm8G/n6hHVZhaniVFdXTaGPwlD8snKdn4zZE3qsijlK5TwFNh/K69gBHPUzJXp8o/D3he279ju2uS5W5GftVrLA1Wx6vAId05ag0AugLVln/+MhMg3YVRbUxZZ3G4Lio8lz3G5lP38Qlx9hjV4jLdjGpn4rPDI4FhXSXOyIoyISCzNXfDNTdieq3WgDrGKDd//YGXd78UzoxoIlyLhLBs10WWg9oSJfPAm3eDr0R7QqaJeysv1thUtylw5f/cTvwqU7vlILqIn+mm35JbNgmgwB1s08g1J/WDjoiUY10nzNYEhfGxERem5tDAel6lumC/lEFGYvnxO/OLuaixV0a/JP3zo4Iho3ZUqAI3mOcthFNcseKpP1AoJ+65wa8TbzGGW7zgV76SkmqHNIFMnVuy7pr4="
-
+solution: Discord.Addons.WS4NetCompatibility.sln
+secure: acvu67AEgbeQWvQT5385XLrLF1aD6eY3tE04SzVfrkfrJMlswLkD5Txvpvu6uPrqDD76UeYUA8vMPxLfJv36aNbOmdPFQaufVbXBtjwWjcHzyKi/NNS9MoPJSO7aVUc8v/XhSegJsLkVynqXiL3fRAPtmeemxu0wNlpzjVx2T3PLSLJU+Pdp4A6YwKZ4v+NVZ8XbcObcbz80g+itW+hyydZQZTofqAiZXEsnG0eebAHA8vh6ASZjVYaYispwEHQpwqh0ZjL0b66xERg5x0rm8G/n6hHVZhaniVFdXTaGPwlD8snKdn4zZE3qsijlK5TwFNh/K69gBHPUzJXp8o/D3he279ju2uS5W5GftVrLA1Wx6vAId05ag0AugLVln/+MhMg3YVRbUxZZ3G4Lio8lz3G5lP38Qlx9hjV4jLdjGpn4rPDI4FhXSXOyIoyISCzNXfDNTdieq3WgDrGKDd//YGXd78UzoxoIlyLhLBs10WWg9oSJfPAm3eDr0R7QqaJeysv1thUtylw5f/cTvwqU7vlILqIn+mm35JbNgmgwB1s08g1J/WDjoiUY10nzNYEhfGxERem5tDAel6lumC/lEFGYvnxO/OLuaixV0a/JP3zo4Iho3ZUqAI3mOcthFNcseKpP1AoJ+65wa8TbzGGW7zgV76SkmqHNIFMnVuy7pr4=
 matrix:
   include:
-    - os: linux
-      dist: trusty
-      sudo: required
-      dotnet: 1.0.0-preview2-003131
-      mono: latest
-      env: DOTNETCORE=1
-
+  - os: linux
+    dist: trusty
+    sudo: required
+    dotnet: 1.0.0-preview2-003131
+    mono: latest
+    env: DOTNETCORE=1
 install:
-  - dotnet restore
-
+- dotnet restore
 script:
-  - dotnet pack src/Discord.Addons.WS4NetCompatibility --version-suffix $TRAVIS_BUILD_NUMBER -o artifacts
-  - dotnet build src/ExampleProject
-
+- dotnet pack src/Discord.Addons.WS4NetCompatibility --version-suffix $TRAVIS_BUILD_NUMBER
+  -o artifacts
+- dotnet build src/ExampleProject
 deploy:
   provider: script
   skip_cleanup: true
   script:
-    - nuget push artifacts/*.nupkg $MYGET_API_KEY -Source https://www.myget.org/F/discord-net/api/v2/package
+  - nuget push artifacts/*.nupkg $MYGET_API_KEY -Source https://www.myget.org/F/discord-net/api/v2/package
+env:
+  global:
+    secure: cNlUe+AoEwG91TSNmGUyvRx0RzdAfnIP4/ng47ILqEhP4TlCEQLsY0256Wu4/JeReRTMPBoKrfhStUwLJyxunPZrxymj8OyBMVymcXn+kRZ2Rttmy4nOs0Cx0mUGmYl6iXH4C56jy5m1nj8KYnUDVK1+51PGz8yNLRHJIvjSVpidjLqCEnZTTSAsltom9PTqFD7JSZ8COJN140mG7zp+m5ZegmJpFxGwKpjGi4WqEDZdp0JVKxdNNXihNcVyOQ6UwY9VNWYJ8XTHwyKYnZSRozvwOqhtpX8V+NuMVSA4JOFz465ggZfP8cwEUJUftBpKCE+RbOHyH/ueqyJIR4m5lAs639vDpQ05pSY77hA6fJpwAdbn3ehTGNY7PDAu5UElC+otEpgLSp3rxtNWqd/OZgfg3aTd8T3DNH46tJe94vM7fOchF4i1Q6YE8Z5bqhtFkA58SKhvTHLfJBvgG+VafhIM9UpySHnOR6QA+DWoaaboHgqlzu5VDqCuMybtS4tFbcLeeVva06gez/rL4uX4JphpbSExzWIPW52LeQOOH7AtIeqJ061/cak4vOT9RT9Zh90ixTPi8IaaS+gXeLEM+z/pl7cggnyd2ah4FCL0vUbpvFcWz668Yy/L1S4ldYQZW4lSEmsYrz0JoI2FViRmvyoC4DyA88z6JT5I8qI+WrE=
